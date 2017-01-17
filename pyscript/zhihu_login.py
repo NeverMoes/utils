@@ -133,10 +133,7 @@ except:
 if __name__ == '__main__':
     if isLogin():
         print('您已经登录')
-        url = "https://zhuanlan.zhihu.com/api/posts/24783938"
-        print(session.get(url, headers=headers).status_code)
     else:
         account = input('请输入你的用户名\n>  ')
         secret = input("请输入你的密码\n>  ")
         login(secret, account)
-        print(session.get('https://zhuanlan.zhihu.com/api/posts/24783938').content)
