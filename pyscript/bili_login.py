@@ -50,6 +50,7 @@ def login():
 
     session.get('https://passport.bilibili.com/login')
     captcha = get_captcha()
+    passwd=encrypt(passwd)
 
     postdata = {
         'act': 'login',
@@ -63,6 +64,6 @@ def login():
     res = session.post('https://passport.bilibili.com/login/dologin', data=postdata, allow_redirects=True)
     print(res.text)
     session.cookies.save()
-    
+
 
 login()
