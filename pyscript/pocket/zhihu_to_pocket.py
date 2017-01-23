@@ -1,11 +1,11 @@
 import requests
 import http.cookiejar as cookielib
 import json
-from .local import pocker_access_token, pocket_consumer_key
+from local import pocker_access_token, pocket_consumer_key
 
 
 session = requests.session()
-session.cookies = cookielib.LWPCookieJar(filename='cookies')
+session.cookies = cookielib.LWPCookieJar(filename='zhihu_cookies')
 session.cookies.load(ignore_discard=True)
 
 
